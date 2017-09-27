@@ -1,0 +1,7 @@
+<h1>All the Classical Musics</h1>
+<% @musics.each do |music| %>
+  <h3>Album Name: <%= music.album_name %> </h3>
+  <p><strong>Artist: </strong> <%= music.artist %> </p>
+  <p><strong>Category: </strong> <%= music.category %> </p>
+  <hr>
+<% end %>

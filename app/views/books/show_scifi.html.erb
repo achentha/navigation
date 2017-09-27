@@ -1,0 +1,6 @@
+<h1>All the Sci-Fi Books</h1>
+<% @books.each do |book| %>
+  <h3>Book Title: <%= book.title %> </h3>
+  <p><strong>Author: </strong> <%= book.author %> </p>
+  <hr>
+<% end %>

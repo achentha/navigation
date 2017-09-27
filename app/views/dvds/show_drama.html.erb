@@ -1,0 +1,6 @@
+<h1>All the Drama DVDs</h1>
+<% @dvds.each do |dvd| %>
+  <h3>Movie Name: <%= dvd.movie_name %> </h3>
+  <p><strong>Category: </strong> <%= dvd.category %> </p>
+  <hr>
+<% end %>

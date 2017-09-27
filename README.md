@@ -1,24 +1,39 @@
-# README
+# Simple Navigation
+Navigation made easy.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How is it different from the usual navigation?
 
-Things you may want to cover:
+* define your navigation in a config file, not inside the views
+* create as many navigation levels as you like
+* render all your navigation levels as a nested tree or render each level separately
+* automatic highlighting of the active navigation item
 
-* Ruby version
+## How does it work?
+simple-navigation basically works like this:
 
-* System dependencies
+* You define your navigation with all its levels in the config-file (default: config/navigation.rb)
+* In the view you render your configured navigation using the helper-method render_navigation
 
-* Configuration
+## Installation
+gem 'simple-navigation', '~> 4.0', '>= 4.0.5'
 
-* Database creation
+gem install simple-navigation
 
-* Database initialization
+bundle install
 
-* How to run the test suite
+rails g navigation_config
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Example
+primary.item :books, 'Books', books_path do |books|
 
-* ...
+  books.item :fiction, 'Fiction', fiction_books_path
+
+  books.item :history, 'History', history_books_path
+
+  books.item :sports, 'Sports', sports_books_path
+
+end
+
+## References
+* https://github.com/codeplant/simple-navigation/wiki
